@@ -1,0 +1,42 @@
+#include <studio.h>
+
+int main()
+{
+	int temp,x,y,z ;
+	scanf("%d%d%d" , &x, &y, &z);
+	if(x<y)
+	{
+		temp=x,x=y,y=temp;
+	}
+	if(y<z)
+	{
+		temp=y,y=z,z=temp;
+	}
+	printf("%d%d%d" , x, y, z);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#define N 2
+int math(int a[],int x, int n);
+int main()
+{
+    int i,answer,a[N],x;
+    scanf("%d", &x);
+    for(i=0;i<N;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    answer=math(a,x,N);
+    printf("%d", answer);
+}
+
+int math(int a[],int x,int n)
+{
+    int i=0;
+    int p=a[n];
+    for(i=n;i>0;i--)
+    {
+            p = a[i-1]+x*p;
+    }
+    return p;
